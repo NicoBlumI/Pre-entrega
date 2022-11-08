@@ -34,8 +34,8 @@ describe('Pre-Entrega', () => {
     loginPage.escribirContraseña(loginDatos.password);
     loginPage.clickBotonLogin();
     home.clickOnlikneShop();
-
   })
+
   
   it('test unico', () => {
     suma=producto.producto1.precio+producto.producto2.precio;
