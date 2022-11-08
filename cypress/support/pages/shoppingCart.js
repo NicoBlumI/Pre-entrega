@@ -1,13 +1,11 @@
 export class ShoppingCart{
-    verificarPrecioProducto(producto,precio){
-        cy.get(`[name^='${producto}']`).should('be.visible').and('be.visible',`[name^='${precio}']`);
-    }  
+     
 
     retornarProducto(producto){
         return cy.get(`[name^='${producto}']`) 
     }
-    retornarPrecio(precio){
-        return cy.get(`[name^='${precio}']`)   
+    retornarPrecio(producto){
+        return cy.get(`[name^='${producto}']`).siblings('#productPrice ');   
 
     }   
 

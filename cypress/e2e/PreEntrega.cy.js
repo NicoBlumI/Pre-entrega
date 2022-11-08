@@ -44,12 +44,11 @@ describe('Pre-Entrega', () => {
     products.agregarCarrito(producto.producto2.producto).click();
     products.cerrarPrompt();
     products.irCarrito();
-    shoppingCart.retornarProducto(producto.producto1.producto).should('be.visible');
-    shoppingCart.retornarPrecio(producto.producto1.precio).should('be.visible');
-    shoppingCart.retornarProducto(producto.producto2.producto).should('be.visible');
-    shoppingCart.retornarPrecio(producto.producto2.precio).should('be.visible');
-    shoppingCart.verificarPrecioProducto(producto.producto1.producto, producto.producto1.precio);//verificamos que el precio sea el correcto al producto.
-    shoppingCart.verificarPrecioProducto(producto.producto2.producto, producto.producto2.precio);    
+    shoppingCart.retornarProducto(producto.producto1.producto).should('have.text',producto.producto1.producto);
+    shoppingCart.retornarPrecio(producto.producto1.producto).should('be.visible');
+    shoppingCart.retornarProducto(producto.producto2.producto).should('have.text',producto.producto2.producto);
+    shoppingCart.retornarPrecio(producto.producto2.producto).should('be.visible');
+     
     shoppingCart.clickTotal();
     shoppingCart.retornarTotal().should('text',suma);
     
