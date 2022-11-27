@@ -2,7 +2,7 @@
 import{Home} from '../support/pages/home'
 import{Products} from '../support/pages/products'
 import{ShoppingCart} from '../support/pages/shoppingCart'
-import{CheckOut} from '../support/pages/checkOut'
+//import{CheckOut} from '../support/pages/checkOut'
 
 
 describe('Pre-Entrega', () => {
@@ -12,8 +12,7 @@ describe('Pre-Entrega', () => {
   const home=new Home();
   const products=new Products();
   const shoppingCart= new ShoppingCart();
-  const checkOut= new CheckOut();
-  
+  //const checkOut= new CheckOut(); 
   
 
   before('Ingresar', ()=>{    
@@ -49,7 +48,7 @@ describe('Pre-Entrega', () => {
       producto=prod;   
        });
 
-      cy.fixture('checkOut').then(info=>{
+      cy.fixture('tarjeta').then(info=>{
         tarjeta=info;
       })
         
@@ -74,9 +73,9 @@ describe('Pre-Entrega', () => {
     products.cerrarPrompt();
     products.irCarrito();
     shoppingCart.retornarProducto(producto.producto1.producto).should('have.text',producto.producto1.producto);
-    shoppingCart.retornarPrecio(producto.producto1.producto).should('have.text',`$${producto.producto1.precio}`);
+    shoppingCart.retornarPrecio(producto.producto1.precio).should('have.text',`$${producto.producto1.precio}`);
     shoppingCart.retornarProducto(producto.producto2.producto).should('have.text',producto.producto2.producto);
-    shoppingCart.retornarPrecio(producto.producto2.producto).should('have.text',`$${producto.producto2.precio}`);
+    shoppingCart.retornarPrecio(producto.producto2.precio).should('have.text',`$${producto.producto2.precio}`);
      
     shoppingCart.clickTotal();
     shoppingCart.retornarTotal().should('text',suma);
