@@ -21,6 +21,10 @@ export class ShoppingCart{
        return cy.get('#price > b');        
 
     }
+    clickCheckOut(){
+        cy.get('.css-641vkz > .chakra-button').click();
+        
+    }
 
    
 }
