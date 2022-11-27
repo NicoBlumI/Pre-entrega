@@ -74,9 +74,10 @@ describe('Pre-Entrega', () => {
     products.cerrarPrompt();
     products.irCarrito();
     shoppingCart.retornarProducto(producto.producto1.producto).should('have.text',producto.producto1.producto);
-    shoppingCart.retornarPrecio(producto.producto1.precio).should('have.text',`$${producto.producto1.precio}`);
+    shoppingCart.retornarPrecio(producto.producto1.producto).should('have.text',`$${producto.producto1.precio}`);
     shoppingCart.retornarProducto(producto.producto2.producto).should('have.text',producto.producto2.producto);
-    shoppingCart.retornarPrecio(producto.producto2.precio).should('have.text',`$${producto.producto2.precio}`);     
+    shoppingCart.retornarPrecio(producto.producto2.producto).should('have.text',`$${producto.producto2.precio}`);
+     
     shoppingCart.clickTotal();
     shoppingCart.retornarTotal().should('text',suma);
     shoppingCart.clickCheckOut();
